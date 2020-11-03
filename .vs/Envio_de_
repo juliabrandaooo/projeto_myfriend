@@ -1,0 +1,207 @@
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Prog_Bradesco
+{
+    public partial class Form2 : Form
+    {
+        public static string diretorio = String.Empty;
+        public static string anexoArq = String.Empty;
+
+
+        public Form2()
+        {
+            //Fechar a tabela.
+            tabela_dados janelaTable = new tabela_dados();
+            janelaTable.Close();
+
+            InitializeComponent();
+        }
+
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                //textBox Para:
+                txtPara.Text = "";
+                txtPara.Enabled = true;
+                txtPara.Focus();
+
+
+            }
+            else
+            {
+                //textBox Para:
+                txtPara.Text = "pd@acaocontactcenter.com.br";
+                //txtPara.Text = "lucianojoaquim.silva@bradesco.com.br, fernando.prieto@bradesco.com.br";
+                txtPara.Enabled = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                //textBox Cc:
+                txtCc.Text = "";
+                txtCc.Enabled = true;
+                txtCc.Focus();
+
+
+            }
+            else
+            {
+                //textBox Cc:
+                txtCc.Text = "pd@acaocontactcenter.com.br";
+                txtCc.Enabled = false;
+            }
+        }
+
+        private void CarregarAssinatura(object sender, EventArgs e)
+        {
+            selectArq = new OpenFileDialog();
+
+            //Mensagem de teste
+            //MessageBox.Show("Neste opc, o usuário irá escolher uma assinatura para colocar o corpo da mensgem.","Mostrando tarefa",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+
+            if (selectArq.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo file = new FileInfo(selectArq.FileName);
+                diretorio = file.FullName;
+                MessageBox.Show("Imagem carregada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao carregar a imagem.", "Aviso",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AnexarArq(object sender, EventArgs e)
+        {
+            selectArq = new OpenFileDialog();
+
+            //Mensagem de teste
+            //MessageBox.Show("Neste opc, o usuário irá escolher um arquivo para anexar ao email.", "Mostrando tarefa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+            if (selectArq.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo file = new FileInfo(selectArq.FileName);
+                anexoArq = file.FullName;
+                txtNomeArq.Text = file.DirectoryName;
+                MessageBox.Show("Arquivo carregado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao carregar a imagem.", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void EnviarEmail(object sender, EventArgs e)
+        {
+            //variaveis:
+            string[] emailsPara = txtPara.Text.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries); // realizar a tratativa removendo os espaços em branco e separando no array pro virgula.
+            string[] emailsCc = txtCc.Text.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+            //string login = txtLogin.Text;
+            string MensagemEmailInicial = txtMensagem.Text;
+            string AssuntoEmail = txtAssunto.Text;
+            //Pegando a data do dia atual
+            DateTime NovaDataRelatorio = DateTime.Now;
+
+
+
+
+
+            MailMessage mailMessage = new MailMessage();
+            //Endereço que irá aparecer no e-mail do usuário 
+            mailMessage.From = new MailAddress("pd@acaocontactcenter.com.br", "Processamentos de Dados | Ação Contact Center");
+            //mailMessage.From = new MailAddress("suporte.crm@acaocontactcenter.com.br", "Suporte CRM | Ação Contact Center");
+            //destinatarios do e-mail, para incluir mais de um basta separar por ponto e virgula  
+
+
+            //enviado para(TO):
+            if (emailsPara.Length > 0) {
+                for (int i = 0; i < emailsPara.Length; i++) {
+                    mailMessage.To.Add(emailsPara[i].ToString());
+                }
+            }else {
+                mailMessage.To.Add("lucianojoaquim.silva@bradesco.com.br");
+                //mailMessage.To.Add("claudinei.aragao@bradesco.com.br");
+            }
+            //mailMessage.To.Add("lucianojoaquim.silva@bradesco.com.br");
+            //mailMessage.To.Add("fernando.prieto@bradesco.com.br");
+
+
+            //enviar copia(CC):
+            if (emailsCc.Length > 0)
+            {
+                for (int i = 0; i < emailsCc.Length; i++)
+                {
+                    mailMessage.CC.Add(emailsCc[i]);
+                }
+            }
+            else {
+                mailMessage.CC.Add("pd@acaocontactcenter.com.br");
+            }
+            //mailMessage.CC.Add("pd@acaocontactcenter.com.br");
+            //mailMessage.Bcc.Add(login);//copia ocuta 
+
+
+
+            mailMessage.Subject = AssuntoEmail + NovaDataRelatorio.ToShortDateString();
+            mailMessage.IsBodyHtml = true;
+
+          
+            //conteudo do corpo do e-mail
+            //Stilização do E-mail
+            StringBuilder body = new StringBuilder();
+            body.Append("<html><body style=\"font-family:Arial, Helvetica, sans-serif; font-size: 14px\"><br/><img src=\"cid:logo\" title=\"logo\" /><table>");
+            //indicando o caminho para a assinatura.
+            //pedir al usuario para acarregarga a assinatura.
+            LinkedResource lr = new LinkedResource(diretorio, "image/jpg");
+            lr.ContentId = "logo";
+            Attachment att = new Attachment(anexoArq);
+            mailMessage.Attachments.Add(att);
+            AlternateView av = AlternateView.CreateAlternateViewFromString(MensagemEmailInicial+ "<br/>" + body.ToString(), new ContentType("text/html"));
+            av.ContentType.CharSet = Encoding.UTF8.WebName;
+            av.LinkedResources.Add(lr);
+            mailMessage.AlternateViews.Add(av);
+            mailMessage.Priority = MailPriority.High;
+
+
+
+            //smtp do e-mail que irá enviar 
+            SmtpClient smtpClient = new SmtpClient("mail.acao.local");//192.168.220.1 //25
+            smtpClient.EnableSsl = false;
+
+
+            //credenciais da conta que utilizará para enviar o e-mail 
+            smtpClient.Credentials = new NetworkCredential("pd@acaocontactcenter.com.br", "acao@2019");
+            //smtpClient.Credentials = new NetworkCredential("suporte.crm@acaocontactcenter.com.br", "acao@2016$");
+            smtpClient.Send(mailMessage);
+
+            try
+            {
+                //smtpClient.Send(mailMessage);
+                MessageBox.Show("Mensagem Enviada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Form1 janelaTable = new Form1();
+                janelaTable.Show();
+
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Erro ao enviar o Email");
+            }
+
+        }
+
+    }
+}

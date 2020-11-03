@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html leng='pt-br'>
+	<head>
+		<title>My Friends - Login </title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" /><!---->
+		<meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" /><!--palavras chaves para o buscador-->
+		<meta name="author" content="Equipe de desenvolvimento Myfriends" />
+		<link rel="icon" type="Myfriends.icon" href="icon/favicon.ico" class="icon"/>
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
+		<link rel="stylesheet" type="text/css" href="CSS/css-login.css">
+
+		<script type="text/javascript">
+			
+			
+			function TesteCPF() {
+				var strCPF = document.getElementById('num-cpf').getAttribute('value').call();//pegara o valor e  atribuir a uma variável.
+			
+    			var Soma;
+    			var Resto;
+    			Soma = 0;
+  				if (strCPF == "00000000000") return alert("CPF Invalido");
+     
+  				for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+  				Resto = (Soma * 10) % 11;
+   
+    			if ((Resto == 10) || (Resto == 11))  Resto = 0;
+   				if (Resto != parseInt(strCPF.substring(9, 10)) ) return alert("CPF Invalido");
+   
+  				Soma = 0;
+    			for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+   				Resto = (Soma * 10) % 11;
+   
+    			if ((Resto == 10) || (Resto == 11))  Resto = 0;
+   	 			if (Resto != parseInt(strCPF.substring(10, 11) ) ) return alert("CPF Invalido");
+    			return true;
+			};
+
+
+			function validarCNPJ(cnpj) {
+				var cnpj = document.getElementById("num-cnpj").getAttribute("value").call();
+ 
+ 				cnpj = cnpj.replace(/[^\d]+/g,'');
+
+ 				if(cnpj == '') return false;
+  
+ 				if (cnpj.length != 14) return false;
+
+ 				// Elimina CNPJs invalidos conhecidos
+ 				if (cnpj == "00000000000000" || 
+	 				cnpj == "11111111111111" || 
+	 				cnpj == "22222222222222" || 
+				    cnpj == "33333333333333" || 
+	 				cnpj == "44444444444444" || 
+	 				cnpj == "55555555555555" || 
+	 				cnpj == "66666666666666" || 
+	 				cnpj == "77777777777777" || 
+	 				cnpj == "88888888888888" || 
+	 				cnpj == "99999999999999") return false;
+	  
+ 				// Valida DVs
+ 				tamanho = cnpj.length - 2
+ 				numeros = cnpj.substring(0,tamanho);
+ 				digitos = cnpj.substring(tamanho);
+ 				soma = 0;
+ 				pos = tamanho - 7;
+ 				for (i = tamanho; i >= 1; i--) {
+   					soma += numeros.charAt(tamanho - i) * pos--;
+   					if (pos < 2)
+		 				pos = 9;
+ 				}
+ 				resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+ 				if (resultado != digitos.charAt(0))
+	 				return false;
+	  
+ 				tamanho = tamanho + 1;
+ 				numeros = cnpj.substring(0,tamanho);
+ 				soma = 0;
+ 				pos = tamanho - 7;
+ 				for (i = tamanho; i >= 1; i--) {
+   					soma += numeros.charAt(tamanho - i) * pos--;
+   					if (pos < 2)
+		 			pos = 9;
+ 				}
+ 				resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+ 				if (resultado != digitos.charAt(1))
+	   			return false;
+		
+ 				return true;
+ 
+			};
+
+
+			function validarSenha(){
+				var senha1 = document.getElementById("senha").getAttribute("value").call();
+				var senha2 = document.getElementById("senha-1").getAttribute("value").call();
+
+				if(senha1 != senha2)
+				{
+					alert("As senhas Estão diferentes,\n por favor digite as duas senha iguais.");
+				}
+				else
+				{
+					alert("Registrto feito com sucesso!");
+				}				
+			};
+
+		</script>
+
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="linha">
+				<header>
+					<div class= "coluna col4">
+						<!--<img class="img img-login" src="img/logo/logoMYF.png" alt="My Friend" width="105px" height="40px"/>-->
+						<h1 class="logo">My Friends</h1>
+					</div>
+					<div class= "coluna col8">
+						<nav>
+							<ul class="menu inline sem-marcador">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="quemsomos.html">Quem somos</a></li>
+								<li><a href="myfriendslogin.html">Login</a></li>
+								<li><a href="myfriendsfaleconosco.html">Fale conosco</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+			</div>
+		</div>
+
+		<div class="entrar-conta">
+			<div class="linha color-teste">
+				<div class="coluna col3 bloco-branco"></div>
+
+				<div class="coluna col6 bloco-cadastro">
+					<section>
+						<img src="img/logo/logoMYF.png" class="logoMYF" alt="logo- My Friends">
+
+						<div class="pergunta">
+							<form action="" method="GET" id="tipo-pessoa">
+								<p id=cor-branca>Pessoa Fisica ou Juridica?</p>
+								
+									<label for="tipo_pessoa1">Fisica</label>
+									<input type="radio" id="tipo_pessoa1" name="tipo_pessoa01" value="fisica" onclick="document.getElementById('fisica').style.display='block'"/>
+								
+								
+									<label for="tipo_pessoa2">Juridica</label>
+									<input type="radio" id="tipo_pessoa2" name="tipo_pessoa01" value="juridica" onclick="document.getElementById('juridica').style.display='block'"/>
+																
+							</form>
+						</div>
+						
+						
+						<div class="pessoa_fisica" id="fisica"  style="display:none">						
+							<h2>Cadastro Voluntario</h2>
+							<form action="" method="POST" id="Cadastro-pessoa-fisica"><!--Procurar saber mais sobre o metodo post e a tag from-->
+								<label for = "nome" >Nome:</label>
+								<input id="nome" type="text" placeholder="Digite o seu nome complento" name="nome-voluntario"/>
+								<label for = "dta-nascimento">Data Nascimento:</label>
+								<input id="dta-nascimento" type="date" placeholder="Digite sua data nascimento" name="dta-nascimento"/>
+								<label for = "num-cpf">CPF:</label>
+								<input id="num-cpf" type="text" placeholder="Digite o seu CPF" name="CPF"/>
+								<label for="num-telefone">Telefone:</label>
+								<input id="num-telefone" type="text" placeholder="Digite o seu Telefone" name="num-tel" onclick="TesteCPF()"/>
+								<label for="num-cep">CEP:</label>
+								<input id="num-cep" type="text" placeholder="Digite o cep da sua residencia" name="num-cep"/>
+								<label for="num-casa">Número da casa:</label>
+								<input id="num-casa" type="number" placeholder="Digite o numero da casa" name="num-casa"/>
+								<label for="email">Email:</label>
+								<input id="email" type="email" placeholder="Digite o seu email de contato" name="email"/>
+								<label for="login">Login:</label>
+								<input id="login" type="text" placeholder="Digite um login para sua conta" name="login"/>
+								<label for="senha">Senha:</label>
+								<input type="text" name="senha" id="senha" placeholder="Digite uma senha de acesso">
+								<label for="senha">Digite novamente a sua senha:</label>
+								<input type="text" name="senha-1" id="senha-1" placeholder="Digite novamente a senha de acesso"/>
+								<input id="btn-finalizar-Cadastro" class="botao" type="submit" value="Finalizar" onclick="validarSenha()"/>
+							</form>
+						</div>
+
+
+						<div class="pessoa_juridica" id="juridica"  style="display:none">
+							<h2>Cadastro ONG</h2>
+							<form action="" method="POST" id="Cadastro-pessoa-juridica"><!--Procurar saber mais sobre o metodo post e a tag from-->
+								<label for = "nome" >Nome do responsável pela Ong:</label>
+								<input id="nome" type="text" placeholder="Digite o seu nome completo" name="nome-responsavel"/>
+								<label for = "num-cpf">CPF:</label>
+								<input id="num-cpf" type="text" placeholder="Digite o seu CPF" name="CPF"/>
+								<label for = "razao-social">Razão Social :</label>
+								<input id="razao-social" type="text" placeholder="Digite a Razão social ONG" name="razao-social"/>
+								<label for = "nome-fantasia">Razão Social :</label>
+								<input id="nome-fantasia" type="text" placeholder="Digite o nome fantasia da ONG" name="razao-social"/>
+								<label for = "num-cnpj">CNPJ:</label>
+								<input id="num-cnpj" type="text" placeholder="Digite o CNPJ da ONG" name="CNPJ"/>				
+								<label for = "tipo-ong">Tipo de ONG:</label>
+								<input id="tipo-ong" type="text" placeholder="Digite qual o tipo da sua ONG" name="tipo-ong"/>	
+								<label for="num-telefone">Telefone:</label>
+								<input id="num-telefone" type="text" placeholder="Digite o principal número para contato" name="num-tel"/>
+                                <label for="num-telefone2">Telefone:</label>
+								<input id="num-telefone2" type="text" placeholder="Digite outro número de contato" name="num-tel2"/>
+								<label for="num-cep">CEP:</label>
+								<input id="num-cep" type="text" placeholder="Digite o CEP da ONG" name="num-cep"/>
+								<label for="endereco">ENDERECO:</label>
+								<input id="endereco" type="text" placeholder="Digite o endereço da ONG" name="num-cep"/>
+								<label for="login">Login</label>
+								<input id="login" type="text" placeholder="Digite um login para sua conta" name="login"/>
+								<label for="senha">Senha</label>
+								<input type="text" name="senha" id="senha" placeholder="Digite uma senha de acesso">
+								<label for="senha">Digite novamente a sua senha</label>
+								<input type="text" name="senha-1" id="senha-1" placeholder="Digite novamente a senha de acesso"/>
+								<input id="btn-finalizar-Cadastro" class="botao" type="submit" value="Finalizar"/>
+							</form>
+						</div>
+						
+					</section>
+				</div>
+
+				<div class="coluna col3 bloco-branco"></div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="linha">
+				<footer>
+					<div class="coluna col12">
+						<span>&copy; 2019 - Desenvolvedores: Equipe My Friends </span>
+					</div>		
+				</footer>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+
+
+
+
+	
+	
