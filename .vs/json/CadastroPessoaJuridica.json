@@ -1,0 +1,14 @@
+{
+    "nome" : "Julia de Paula",
+    "num-cpf" : "12345678912",
+    "razao-social" : "ONG dos Animais Marinhos",
+    "nome-fantasia" : "Ong do mar",
+    "num-cnpj" : "12345678000190",
+    "tipo-ong" : "Meio Ambiente",
+    "num-telefone" : "3111112222",
+    "num-telefone2" : "3122224444",
+    "num-cep" : "99999999",
+    "endereco" : "Av. das Amendoeiras, Buritis, Belo Horizonte - Minas Gerais",
+    "login" : "julia.paula",
+    "senha" : "senha123"
+}
