@@ -343,6 +343,17 @@ h1.logo {
 }
 
 
+.feed img {
+	opacity: inherit;
+	max-width: 50%;
+	height: auto;
+	position: relative;
+	margin-left: 150px;
+}
 
-
+div.feed {
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(29, 1, 36, 0.2), 0 6px 20px 0 rgba(29, 1, 36, 0.2);
+	margin-bottom: 5px;
+}
 
