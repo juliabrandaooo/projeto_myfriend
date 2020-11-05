@@ -8,11 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-<<<<<<< HEAD
-            "url": "C:\\Users\\Júlia\\Desktop\\MF"
-=======
-            "url": "C:\\Users\\Júlia\\source\\repos\\MF\\index.html"
->>>>>>> 6343b0e93a078efd5029235efbdadb5ee16e0409
+            "url": "file:///C:/Users/Júlia/Desktop/MF/index.html"
             
         }
     ]
