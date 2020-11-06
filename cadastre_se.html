@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html leng='pt-br'>
 	<head>
-		<title>My Friends - Login </title>
+		<title>My Friends - Home </title>
 		<meta charset="utf-8"/>
 		<meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" /><!---->
 		<meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" /><!--palavras chaves para o buscador-->
@@ -10,19 +10,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
-		<link rel="stylesheet" type="text/css" href="CSS/css-login.css">
+		<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+		<link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	   <script type="text/javascript">
-			
-			function enviar(){
-				if(document.getElementById("btn-Enviar").click == true){
-					document.getElementById("inf-enviado").innerHTML = "Foi enviado uma mensagem para o seu email";
-					alert("button was clicked");
-				}
-			}
-			
-
-	   </script>
+		
 
 	</head>
 
@@ -31,8 +24,7 @@
 			<div class="linha">
 				<header>
 					<div class= "coluna col4">
-						<!--<img class="img img-login" src="img/logo/logoMYF.png" alt="My Friend" width="105px" height="40px"/>-->
-						<h1 class="logo">My Friends</h1>
+						<h1 class="logo"> MyFriend</h1>
 					</div>
 					<div class= "coluna col8">
 						<nav>
@@ -49,30 +41,21 @@
 				</header>
 			</div>
 		</div>
-
-		<div class="entrar-conta">
-			<div class="linha color-teste">
-				<div class="coluna col3 bloco-branco"></div>
-
-				<div class="coluna col6 bloco-login">
-					<section>
-						<img src="img/logo/logoMYF.png" class="logoMYF" alt="logo- My Friends">
-						
-						<h2>Recuperar Senha</h2>
-						<form action="" method="POST"><!--Procurar saber mais sobre o metodo post e a tag from-->
-							<label for = "login" >Digite o seu email:</label>
-							<input id="login" type="text" placeholder="Digite o seu login de acesso" name="login"/>
-							<input id="btn-Enviar" class="botao" type="submit" value="Enviar" onclick="enviar()"/>
-						</form>
-						<p id="inf-enviado"></p>
-					</section>
-				</div>
-
-				<div class="coluna col3 bloco-branco"></div>
-			</div>
-		</div>
-
-		<div class="footer">
+        <main>            
+			<h1>Como podemos lhe estender a mão?</h1>
+			<section class="container">
+				<div class="botoes">
+					<div>
+						<a href="cadastro_ong.html"><button type="button" id="btn" class="btn btn-primary btn-lg btn-block">
+							Sou ONG</button></a>					
+						<a href="souvoluntario.html"><button type="button" id="btn" class="btn btn-secondary btn-lg btn-block">
+							Sou voluntário</button></a>
+						<a href="index.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
+					</div>
+				</div>	
+			</section>				           
+        </main>
+        <div class="footer_c">
 			<div class="linha">
 				<footer>
 					<div class="coluna col12">
@@ -85,10 +68,3 @@
 	</body>
 
 </html>
-
-
-
-
-
-	
-	
