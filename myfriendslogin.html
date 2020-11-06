@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html leng='pt-br'>
-
+<script src="scripts/login.js"> </script>
 <head>
 	<title>My Friends - Login </title>
 	<meta charset="utf-8" />
@@ -16,9 +16,6 @@
 		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
 	<link rel="stylesheet" type="text/css" href="CSS/css-login.css">
-
-
-
 </head>
 
 <body>
@@ -52,17 +49,21 @@
 					<img src="img/logo/exlogo-removebg.png" class="logoMYF" alt="logo- My Friends">
 
 					<h2>Login</h2>
-					<form action="" method="POST">
-						<!--Procurar saber mais sobre o metodo post e a tag from-->
-						<label for="login">Login:</label>
-						<input id="login" type="text" placeholder="Digite o seu login de acesso" name="login" />
-						<label for="senha">Senha:</label>
-						<input id="senha" type="password" placeholder="Digite sua senha" name="senha" />
-						<a href="myfriendsrecuperarsenha.html" class="sem-borda">Esqueceu sua senha?</a>
-						<a href="myfriendscadastro.html" class="sem-borda">Ainda não possui um conta?</a>
-						<input id="btn-entrar" class="botao" type="submit" value="Entrar" />
 
-					</form>
+					<!--Procurar saber mais sobre o metodo post e a tag from-->
+					
+
+					<label for="login">Login:</label>
+					<input id="login" type="text" placeholder="Digite o seu login de acesso" name="login" />
+					<label for="senha">Senha:</label>
+					<input id="senha" type="password" placeholder="Digite sua senha" name="senha" />
+					<a href="myfriendsrecuperarsenha.html" class="sem-borda">Esqueceu sua senha?</a>
+					<a href="myfriendscadastro.html" class="sem-borda">Ainda não possui um conta?</a>
+					<input id="btn-entrar" class="botao" type="submit" value="Entrar" onclick="Logar()">
+
+					
+
+
 				</section>
 			</div>
 
@@ -75,7 +76,7 @@
 			<footer>
 				<div class="coluna col12">
 					<a href="feed.html"> oi </a>
-					<span>&copy; 2019 - Desenvolvedores: Equipe My Friends </span>
+					<span>&copy; 2019 - Desenvolvedores: Equipe My Friend </span>
 				</div>
 			</footer>
 		</div>
