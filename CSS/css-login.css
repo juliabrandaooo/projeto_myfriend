@@ -269,7 +269,7 @@ h1.logo {
 
 /*Estilizando o Footer------------------------------------------------*/
 .footer {
-	margin-top: 550px;
+	margin-top: 100%;
 	background: #169c8f;
 	color: #ebebeb;
 	padding: 20px 0px;
