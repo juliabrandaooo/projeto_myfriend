@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html leng='pt-br'>
+	<head>
+		<title>My Friends - Home </title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" /><!---->
+		<meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" /><!--palavras chaves para o buscador-->
+		<meta name="author" content="Equipe de desenvolvimento Myfriends" />
+		<link rel="icon" type="Myfriends.icon" href="icon/favicon.ico" class="icon"/>
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
+		<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+		<link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		
+
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="linha">
+				<header>
+					<div class= "coluna col4">
+						<h1 class="logo"> MyFriend</h1>
+					</div>
+					<div class= "coluna col8">
+						<nav>
+							<ul class="menu inline sem-marcador">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="quemsomos.html">Quem somos</a></li>
+								<li><a href="myfriendslogin.html">Login</a></li>
+								<li><a href="cadastre_se.html">Cadastre se</a>  
+								<li><a href="myfriendsfaleconosco.html">Fale conosco</a>                              
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+			</div>
+		</div>
+        <main>            
+			<h1>Gostariamos de te conhecer um pouco mais</h1>
+            <form action="/pagina-processa-dados-do-form" method="post">
+              <div>
+                <p><b>
+                    Qual sua area de atuação? </b><br> <br>
+                    <select name="interesse" multiple size="4">
+                      <option>Animais</option>
+                      <option>Idosos</option>
+                      <option>Praticas Esportivas</option>
+                      <option>Orfanatos</option>
+                      <option>Infermos</option>
+                      <option>Outras</option>
+                      <br>
+                    </select>
+                  </p>
+               </div>    
+               <div>
+                    <p><br><b>
+                        Qual o máximo de voluntários a ONG comporta em uma
+                         ação social em suas dependências?  </b><br>  1 pessoas
+                          <input type="range" min="0" max="100" step="5"/> 100 pessoas
+                    </p>  
+               </div>
+               <div>
+                <p><b>
+                    Qual tipo de doação você prefere? </b> <br> <br>
+                    <select name="interesse" multiple size="4">
+                      <option>Financeira</option>
+                      <option>Produtos</option>
+                      <option>Voluntariado Esportivas</option>
+                      <option>Serviços</option>
+                      <option>Outras</option>
+                    </select>
+                  </p>
+               </div>
+               <div>
+                <p>
+                    <b>Em caso de ajuda de voluntários ou serviços, a ONG possui
+                         estrutura para recebe lós?<br></b>
+                    <select name="uf">
+                      <optgroup label="">
+                        <option>Sim, conseguimos receber.</option>
+                        <option>Não, nossa estrutura não comporta.</option>
+                        <option>Talves, apenas poucas pessoas.</option>
+                      </optgroup>
+                    </select>
+                  </p>
+               </div>
+                
+                <div class="btns">
+                    <div>
+                        <a href="cadastro_pj.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
+                    </div>
+                    <div>
+                        <a href="index.html"><button type="button" class="btn btn-outline-info">Finalizar</button></a>    
+                    </div>
+                </div>
+            </form>
+            
+            </div>
+        </main>
+        <div class="footer_c">
+			<div class="linha">
+				<footer>
+					<div>
+						<span>&copy; 2019 - Desenvolvedores: Equipe My Friends </span>
+					</div>		
+				</footer>
+			</div>
+		</div>
+
+	</body>
+
+</html>

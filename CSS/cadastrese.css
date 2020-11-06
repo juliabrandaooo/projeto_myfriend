@@ -1,0 +1,102 @@
+h1{
+
+    text-align: center;
+    font-size: 2em;
+    margin:  0 0 1em;
+    clear: left;
+    
+}
+
+.botoes{
+    padding: 20px;
+    margin: 100px;
+}
+
+#btn
+{   
+    text-align: center;
+    font-size: 2em;
+    margin:  0 0 1em;
+    clear: left;
+    border: none; /* sem contorno de borda */
+	border-radius: 5px; /*arredodando as bordas */
+	transition: 1s all; /* tempo de demora da mudança */
+	cursor: pointer; /* o cursor vira mãozinha */
+}
+
+#btn:hover { /* ação de quando passar o cursor em cima */
+	background: rgb(177, 207, 2);
+	transform: scale(1.2); /* aumenta o botão em 20% */
+
+}
+
+
+.footer_c{
+    display: block;
+	bottom:0;
+    width:100%;
+    margin-top: 40px;
+    background: #169c8f;
+    color:#ebebeb;
+    text-align: right;
+
+  
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 30%;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #ccc;
+}
+form div  {
+    width: 100%;
+  
+}
+
+form div input{
+    width: 100%;
+
+}
+label {
+    display: inline-block;
+    text-align: left;
+}
+
+form div label{
+    width: 50%;
+}
+
+
+input, textarea {
+    font: 1em sans-serif;
+    width: 50%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 20px;
+    width: 50%;
+}
