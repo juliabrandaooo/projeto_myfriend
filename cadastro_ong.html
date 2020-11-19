@@ -1,109 +1,117 @@
 <!DOCTYPE html>
 <html leng='pt-br'>
-	<head>
-		<title>My Friends - Home </title>
-		<meta charset="utf-8"/>
-		<meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" /><!---->
-		<meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" /><!--palavras chaves para o buscador-->
-		<meta name="author" content="Equipe de desenvolvimento Myfriends" />
-		<link rel="icon" type="Myfriends.icon" href="icon/favicon.ico" class="icon"/>
-		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
-		<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
-		<link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-		
+<head>
+    <title>My Friends - Home </title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" />
+    <!---->
+    <meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" />
+    <!--palavras chaves para o buscador-->
+    <meta name="author" content="Equipe de desenvolvimento Myfriends" />
+    <link rel="icon" type="Myfriends.icon" href="icon/favicon.ico" class="icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/normaliz.css">
+    <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+    <link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="scripts/cadastro_ong.js"></script>
 
-	</head>
 
-	<body>
-		<div class="header">
-			<div class="linha">
-				<header>
-					<div class= "coluna col4">
-						<h1 class="logo"> MyFriend</h1>
-					</div>
-					<div class= "coluna col8">
-						<nav>
-							<ul class="menu inline sem-marcador">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="quemsomos.html">Quem somos</a></li>
-								<li><a href="myfriendslogin.html">Login</a></li>
-								<li><a href="cadastre_se.html">Cadastre se</a>  
-								<li><a href="myfriendsfaleconosco.html">Fale conosco</a>                              
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</header>
-			</div>
-		</div>
-        <main>            
-			<h1>Dados Pessoais</h1>
-            <form action="/pagina-processa-dados-do-form" method="post">
-                <div>
-                    <label for="name">Nome da ONG:</label>
-                    <input type="text" id="name" placeholder= "Digite o nome da ONG" />
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="linha">
+            <header>
+                <div class="coluna col4">
+                    <h1 class="logo"> MyFriend</h1>
                 </div>
-               
-                <div>
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" id="cnpj" placeholder="00.000.000/0000-00"/>
+                <div class="coluna col8">
+                    <nav>
+                        <ul class="menu inline sem-marcador">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="quemsomos.html">Quem somos</a></li>
+                            <li><a href="myfriendslogin.html">Login</a></li>
+                            <li><a href="cadastre_se.html">Cadastre se</a>
+                            <li><a href="myfriendsfaleconosco.html">Fale conosco</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div>
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" placeholder= "Digite seu endereço"/>
-                </div>
-                <div>
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" placeholder= "Digite sua cidade"/>
-                </div>
-                <div>
-                    <label for="estado">Estado:</label>
-                    <input type="text" id="estado"placeholder= "Digite seu estado"/>
-                </div>
-                <div>
-                    <label for="pais">País:</label>
-                    <input type="text" id="pais" placeholder= "Digite seu país"/>
-                </div>
-                <div>
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" placeholder= "00.000-000"/>
-                </div>
-                <div>
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" placeholder= "(00)0000-0000"/>
-                </div>   
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="text" id="email"placeholder= "seunome@email.com"/>
-                </div>             
-                
-                <div class="btns">
-                    <div>
-                        <a href="cadastre_se.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
-                    </div>
-                    <div>
-                        <a href="cadastro_ong_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>    
-                    </div>
-                </div>
-            </form>
-            
+            </header>
+        </div>
+    </div>
+    <main>
+        <h1>Dados Pessoais</h1>
+        <form name="formcadastroong" method="post">
+            <div>
+                <label for="name">Nome da ONG:</label>
+                <input type="text" id="name" placeholder="Digite o nome da ONG" />
             </div>
-        </main>
-        <div class="footer_c">
-			<div class="linha">
-				<footer>
-					<div class="coluna col12">
-						<span>&copy; 2019 - Desenvolvedores: Equipe My Friend</span>
-					</div>		
-				</footer>
-			</div>
-		</div>
 
-	</body>
+            <div>
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" placeholder="00.000.000/0000-00" />
+            </div>
+            <div>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" placeholder="Digite seu endereço" />
+            </div>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" placeholder="Digite sua cidade" />
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" placeholder="Digite seu estado" />
+            </div>
+            <div>
+                <label for="pais">País:</label>
+                <input type="text" id="pais" placeholder="Digite seu país" />
+            </div>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" placeholder="00.000-000" />
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" placeholder="(00)0000-0000" />
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" placeholder="seunome@email.com" />
+            </div>
+
+            <div class="btns">
+                <div>
+                    <a href="cadastre_se.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
+                </div>
+                <div>
+                    <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="return validarFormCadastroOng()" />
+                    <!--<a href="cadastro_ong_questionario.html"><button type="button" class="btn btn-outline-info" onclick="return validarFormCadastroOng()">Continuar</button></a>-->
+                </div>
+            </div>
+            
+        </form>
+
+        </div>
+    </main>
+    <div class="footer_c">
+        <div class="linha">
+            <footer>
+                <div class="coluna col12">
+                    <span>&copy; 2019 - Desenvolvedores: Equipe My Friend</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
 
 </html>
