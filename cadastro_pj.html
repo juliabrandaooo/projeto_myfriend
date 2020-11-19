@@ -13,7 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
 		<link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="scripts/cadastro_pj.js"></script>
 
 		
 
@@ -43,7 +44,7 @@
 		</div>
         <main>            
 			<h1>Dados Pessoais</h1>
-            <form action="/pagina-processa-dados-do-form" method="post">
+            <form name="formcadastropf">
                 <div>
                     <label for="name">Nome da Empresa:</label>
                     <input type="text" id="name" placeholder= "Digite o nome da empresa" />
@@ -51,7 +52,7 @@
                
                 <div>
                     <label for="cnpj">CNPJ:</label>
-                    <input type="text" id="cnpj" placeholder="00.000.000/0000-00"/>
+                    <input type="number" id="cnpj" placeholder="00.000.000/0000-00"/>
                 </div>
                 <div>
                     <label for="endereco">Endereço:</label>
@@ -71,15 +72,15 @@
                 </div>
                 <div>
                     <label for="cep">CEP:</label>
-                    <input type="text" id="cep" placeholder= "00.000-000"/>
+                    <input type="number" id="cep" placeholder= "00.000-000"/>
                 </div>
                 <div>
                     <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" placeholder= "(00)0000-0000"/>
+                    <input type="number" id="telefone" placeholder= "(00)0000-0000"/>
                 </div>   
                 <div>
                     <label for="email">E-mail:</label>
-                    <input type="text" id="email"placeholder= "seunome@email.com"/>
+                    <input type="email" id="email"placeholder= "seunome@email.com"/>
                 </div>             
                 
                 <div class="btns">
@@ -87,7 +88,8 @@
                         <a href="souvoluntario.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
                     </div>
                     <div>
-                        <a href="cadastro_pj_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>    
+                        <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="return validarFormCadastroPJ();"  />
+                        <!--<a href="cadastro_pj_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>-->    
                     </div>
                 </div>
             </form>
