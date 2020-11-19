@@ -4,11 +4,11 @@
 <head>
     <title>My Friends - Home </title>
     <meta charset="utf-8" />
-    <meta name="description" content="Plataforma My Friends é uma ferramenta de interação entre Ongs e voluntarios" />
+    <meta name="description" content="Plataforma My Friend é uma ferramenta de interação entre Ongs e voluntarios" />
     <!---->
     <meta name="keywords" content="Doação, voluntarios, filantropia, açao, social, caridade" />
     <!--palavras chaves para o buscador-->
-    <meta name="author" content="Equipe de desenvolvimento Myfriends" />
+    <meta name="author" content="Equipe de desenvolvimento Myfriend" />
     <link rel="icon" type="Myfriends.icon" href="icon/favicon.ico" class="icon" />
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@300;500&display=swap"
         rel="stylesheet">
@@ -49,43 +49,43 @@
     </div>
     <main>
         <h1>Dados Pessoais</h1>
-        <form name="formcadastroong"  >
+        <form name="formcadastroong" method="POST">
             <div>
                 <label for="name">Nome da ONG:</label>
-                <input type="text" id="name" placeholder="Digite o nome da ONG" />
+                <input type="text" id="name" placeholder="Digite o nome da ONG" name="name" />
             </div>
 
             <div>
                 <label for="cnpj">CNPJ:</label>
-                <input type="text" id="cnpj" placeholder="00.000.000/0000-00" />
+                <input type="number" id="cnpj" placeholder="00.000.000/0000-00" name="cnpj" />
             </div>
             <div>
                 <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" placeholder="Digite seu endereço" />
+                <input type="text" id="endereco" placeholder="Digite seu endereço" name="endereco" />
             </div>
             <div>
                 <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" placeholder="Digite sua cidade" />
+                <input type="text" id="cidade" placeholder="Digite sua cidade" name="cidade"/>
             </div>
             <div>
                 <label for="estado">Estado:</label>
-                <input type="text" id="estado" placeholder="Digite seu estado" />
+                <input type="text" id="estado" placeholder="Digite seu estado" name="estado" />
             </div>
             <div>
                 <label for="pais">País:</label>
-                <input type="text" id="pais" placeholder="Digite seu país" />
+                <input type="text" id="pais" placeholder="Digite seu país" name="pais"/>
             </div>
             <div>
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" placeholder="00.000-000" />
+                <input type="number" id="cep" placeholder="00.000-000" name="cep"/>
             </div>
             <div>
                 <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" placeholder="(00)0000-0000" />
+                <input type="tel" id="telefone" placeholder="(00)0000-0000" name="telefone"/>
             </div>
             <div>
                 <label for="email">E-mail:</label>
-                <input type="text" id="email" placeholder="seunome@email.com" />
+                <input type="email" id="email" placeholder="seunome@email.com" name="email"/>
             </div>
 
             <div class="btns">
@@ -93,8 +93,8 @@
                     <a href="cadastre_se.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
                 </div>
                 <div>
-                    <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="validarFormCadastroOng();"  />
-                    <!--<a href="cadastro_ong_questionario.html"><button type="button" class="btn btn-outline-info" onclick="return validarFormCadastroOng()">Continuar</button></a>-->
+                    <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="return validarFormCadastroOng();"  />
+                    <!--<a href="cadastro_ong_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>-->
                 </div>
             </div>
         </form>

@@ -56,11 +56,11 @@
                 </div>
                 <div>
                     <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" placeholder="000.000.000-00"/>
+                    <input type="number" id="cpf" placeholder="000.000.000-00"/>
                 </div>
                 <div>
                     <label for="nasc">Data de Nascimento:</label>
-                    <input type="text" id="nasc" placeholder= "dd/mm/aaaa"/>
+                    <input type="date" id="nasc" placeholder= "dd/mm/aaaa"/>
                 </div>
                 <div>
                     <label for="endereco">Endereço:</label>
@@ -80,15 +80,15 @@
                 </div>
                 <div>
                     <label for="cep">CEP:</label>
-                    <input type="text" id="cep" placeholder= "00.000-000"/>
+                    <input type="number" id="cep" placeholder= "00.000-000"/>
                 </div>
                 <div>
                     <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" placeholder= "(00)0000-0000"/>
+                    <input type="number" id="telefone" placeholder= "(00)0000-0000"/>
                 </div>   
                 <div>
                     <label for="email">E-mail:</label>
-                    <input type="text" id="email"placeholder= "seunome@email.com"/>
+                    <input type="email" id="email"placeholder= "seunome@email.com"/>
                 </div>             
                 
                 <div class="btns">
@@ -96,7 +96,7 @@
                         <a href="souvoluntario.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
                     </div>
                     <div>
-                        <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="validarFormCadastroPF();"  />
+                        <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="return validarFormCadastroPF();"  />
                         <!--<a href="cadastro_pf_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>-->    
                     </div>
                 </div>
