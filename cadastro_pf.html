@@ -13,7 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
 		<link rel="stylesheet" type="text/css" href="CSS/cadastrese.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="scripts/cadastro_pf.js"></script>
 
 		
 
@@ -43,7 +44,7 @@
 		</div>
         <main>            
 			<h1>Dados Pessoais</h1>
-            <form action="/pagina-processa-dados-do-form" method="post">
+            <form name="formcadastropf" method="post">
                 <div>
                     <label for="name">Nome:</label>
                     <input type="text" id="name" placeholder= "Digite seu nome" />
@@ -95,7 +96,8 @@
                         <a href="souvoluntario.html"><button type="button" class="btn btn-outline-info">Voltar</button></a>
                     </div>
                     <div>
-                        <a href="cadastro_pf_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>    
+                        <input type="submit" name="btnEnviar" class="btn btn-outline-info" value="Continuar" onclick="validarFormCadastroPF();"  />
+                        <!--<a href="cadastro_pf_questionario.html"><button type="button" class="btn btn-outline-info">Continuar</button></a>-->    
                     </div>
                 </div>
             </form>
