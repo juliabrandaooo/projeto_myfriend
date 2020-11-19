@@ -1,5 +1,5 @@
 function validarFormCadastroOng() {
-    var name = formcadastroong.nome.value;
+    var name = formcadastroong.name.value;
     var cnpj = formcadastroong.cnpj.value;
     var endereco = formcadastroong.endereco.value;
     var cidade = formcadastroong.cidade.value;
