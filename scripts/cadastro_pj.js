@@ -1,8 +1,6 @@
 function validarFormCadastroPJ() {
     var name = formcadastropj.name.value;
-    var sobrenome = formcadastropj.sobrenome.value;
-    var cpf = formcadastropj.cpf.value;
-    var nasc = formcadastropj.nasc.value;
+    var cnpj = formcadastropj.cnpj.value;
     var endereco = formcadastropj.endereco.value;
     var cidade = formcadastropj.cidade.value;
     var estado = formcadastropj.estado.value;
