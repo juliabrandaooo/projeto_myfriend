@@ -70,7 +70,14 @@ function validarFormCadastroOng() {
         return re.test(String(email).toLowerCase());
 
     }
+    return true;
+}
 
+function redirecionar(event) {
+    event.preventDefault();
+    if (validarFormCadastroOng()) {
+        window.location.href = "cadastro_ong_questionario.html"
+    }
 }
 
 

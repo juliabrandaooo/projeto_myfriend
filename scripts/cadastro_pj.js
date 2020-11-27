@@ -69,5 +69,12 @@ function validarFormCadastroPJ() {
         return re.test(String(email).toLowerCase());
 
     }
+     return true;
+}
 
+function redirecionar(event) {
+    event.preventDefault();
+    if (validarFormCadastroPJ()) {
+        window.location.href = "cadastro_pj_questionario.html"
+    }
 }
